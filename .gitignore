@@ -1,0 +1,12 @@
+# secrets: never commit
+.env*.local
+.env
+
+# installed packages and build output
+node_modules/
+.next/
+next-env.d.ts
+*.tsbuildinfo
+
+# local stock database (used when DATABASE_URL is empty)
+.data/

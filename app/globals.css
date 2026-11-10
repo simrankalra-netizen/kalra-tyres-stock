@@ -1,0 +1,89 @@
+:root {
+  --bg: #f6f5f2;
+  --card: #ffffff;
+  --text: #1c1b19;
+  --muted: #6b6860;
+  --line: #e3e0d8;
+  --accent: #1f5fbf;
+  --ok: #1d7a3e;
+  --bad: #b42318;
+  --bad-bg: #fdecea;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+main { max-width: 900px; margin: 0 auto; padding: 16px; }
+
+h1 { font-size: 22px; margin: 4px 0 16px; }
+h2 { font-size: 17px; margin: 0 0 10px; }
+
+section {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+input[type="text"] {
+  width: 100%;
+  font-size: 18px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.row { display: flex; gap: 8px; }
+.row input { flex: 1; }
+
+button {
+  font-size: 16px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+button.secondary { background: white; color: var(--accent); }
+button:disabled { opacity: 0.5; cursor: default; }
+
+.table-wrap { overflow-x: auto; margin-top: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { color: var(--muted); font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.total { font-weight: 700; }
+td.zero { color: var(--muted); }
+
+.hint { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
+
+.error {
+  background: var(--bad-bg);
+  color: var(--bad);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-top: 12px;
+}
+
+.card { border: 2px solid var(--accent); border-radius: 10px; padding: 14px; margin-top: 12px; }
+.card.failed { border-color: var(--bad); }
+.card dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 8px 0; }
+.card dt { color: var(--muted); }
+.card dd { margin: 0; font-weight: 600; }
+.missing { color: var(--bad); font-style: italic; font-weight: 400; }
+.unset { color: var(--muted); font-style: italic; font-weight: 400; }
+.match { font-size: 18px; font-weight: 700; margin: 10px 0 4px; }
+.change { color: var(--ok); font-weight: 700; }
+.actions { display: flex; gap: 8px; margin-top: 12px; }
+
+.activity { list-style: none; padding: 0; margin: 0; }
+.activity li { padding: 8px 0; border-bottom: 1px solid var(--line); }
+.activity time { color: var(--muted); font-size: 14px; display: block; }
